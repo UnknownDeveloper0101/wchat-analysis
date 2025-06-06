@@ -65,11 +65,18 @@ def create_wordcloud(selected_user, df):
 
     # Ensure there is at least one valid word
     if text.strip():  # Check if there is any non-empty string
-        wc = WordCloud(width=500, height=500, min_font_size=10, background_color='white').generate(text)
+        wc = WordCloud(
+            width=800, 
+            height=400, 
+            min_font_size=10, 
+            background_color='#1E1E1E',
+            colormap='plasma',
+            max_words=100,
+            relative_scaling=0.5,
+            prefer_horizontal=0.7
+        ).generate(text)
         return wc
     else:
-        return None  # Return None if there are no valid messages
-
         return None  # Return None if there are no valid messages
 
 
